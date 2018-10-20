@@ -16,4 +16,4 @@ Host  someinternalhost
 
 третья часть 
 bastion_IP = 35.210.120.151
-someinternalhost_IP = 10.156.0.3
+someinternalhost_IP = 10.132.0.3
