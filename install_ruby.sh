@@ -1,5 +1,5 @@
 #!/bin/bash
-ssh -i ~/.ssh/andreyovs andreyovs@35.240.105.245
+
 sudo apt-get install ruby-dev
 gem install json -v '1.8.6'
 sudo apt-get install build-essential
@@ -12,4 +12,5 @@ sudo apt update
 sudo apt install -y ruby-full ruby-bundler build-essential
 ruby -v
 bundle -v
-exit
+
+
