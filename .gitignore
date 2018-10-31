@@ -1,4 +1,4 @@
-varibles.json
+variables.json
 *.tfstate
 *.tfstate.*.backup
 *.tfstate.backup
