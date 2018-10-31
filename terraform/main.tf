@@ -20,7 +20,7 @@ resource "google_compute_instance" "app" {
 
   # прописываем ключи
   metadata {
-    ssh-keys = "andreyovs:${file(var.public_key_path)}appuser1:${file(var.public_key_path)}appuser2:${file(var.public_key_path)}"
+    ssh-keys = "appuser:${file(var.public_key_path)}appuser1:${file(var.public_key_path)}appuser2:${file(var.public_key_path)}"
   }
 
   # определение сетевого интерфейса
@@ -34,9 +34,9 @@ resource "google_compute_instance" "app" {
 
   connection {
     type        = "ssh"
-    user        = "andreyovs"
+    user        = "appuser"
     agent       = false
-    private_key = "${file("~/.ssh/andreyovs")}"
+    private_key = "${file("~/.ssh/appuser")}"
   }
 
   provisioner "file" {
