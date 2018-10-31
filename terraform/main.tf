@@ -7,7 +7,8 @@ provider "google" {
 resource "google_compute_instance" "app" {
   name         = "reddit-app"
   machine_type = "g1-small"
-  zone         = "europe-west1-b"
+  zone         = "${var.zone}"
+  count	       = "${var.count}"
   tags         = ["reddit-app"]
 
   # определение загрузочного диска
@@ -19,7 +20,7 @@ resource "google_compute_instance" "app" {
 
   # прописываем ключи
   metadata {
-    ssh-keys = "andreyovs:${file(var.public_key_path)}"
+    ssh-keys = "andreyovs:${file(var.public_key_path)}appuser1:${file(var.public_key_path)}appuser2:${file(var.public_key_path)}"
   }
 
   # определение сетевого интерфейса
