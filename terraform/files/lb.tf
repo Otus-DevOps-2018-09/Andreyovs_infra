@@ -24,3 +24,6 @@ resource "google_compute_forwarding_rule" "www-rule" {
   port_range = "9292"
   target     = "${google_compute_target_pool.www-network-lb.self_link}"
 }
+
+
+

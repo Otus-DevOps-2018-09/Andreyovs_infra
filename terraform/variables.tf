@@ -14,20 +14,29 @@ variable public_key_path {
 variable disk_image {
   description = "Disk image"
 }
-variable zone {
-  description = "Zone"
+
+variable private_key {
+  description = "Key for provisioner connection over SSH"
+}
+
+variable instance_zone {
+  description = "Define zone for VM instance"
   default     = "europe-west1-b"
 }
 
-variable count {
-  description = "Count"
-  default     = "1"
+variable "instance_name" {
+  default = {
+    "0" = "reddit-app"
+    "1" = "reddit-app1"
+  }
 }
+
 variable app_disk_image {
-description = "Disk image for reddit app"
-default = "reddit-app-base"
+  description = "Disk image for reddit app"
+  default     = "reddit-base-app"
 }
+
 variable db_disk_image {
-description = "Disk image for reddit db"
-default = "reddit-db-base"
+  description = "Disk image for reddit db"
+  default     = "reddit-base-db"
 }
