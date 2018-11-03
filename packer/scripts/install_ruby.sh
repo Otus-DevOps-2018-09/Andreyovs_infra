@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
 
-#echo "----- Installing ruby! -----"
+# install ruby
 apt update
 apt install -y ruby-full ruby-bundler build-essential
