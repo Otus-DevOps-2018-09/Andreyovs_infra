@@ -32,7 +32,7 @@ resource "null_resource" "db_provisioner" {
     host        = "${google_compute_instance.db.network_interface.0.access_config.0.nat_ip}"
   }
 provisioner "file" {
-    source      = "${path.module}/files/startdb.sh"
+    source      = "files/startdb.sh"
     destination = "/tmp/startdb.sh"
   }
 
