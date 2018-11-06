@@ -6,7 +6,7 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "state_bucket" {
-  name = "terraform-state-storage-bucket"
+  name = "bucket-andreyo"
 
   versioning {
     enabled = true
@@ -15,11 +15,11 @@ resource "google_storage_bucket" "state_bucket" {
   force_destroy = true
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 }
 
 resource "google_storage_bucket_acl" "state_storage_bucket_acl" {
   bucket         = "${google_storage_bucket.state_bucket.name}"
-  predefined_acl = "private"
+  predefined_acl = "publicreadwrite"
 }
