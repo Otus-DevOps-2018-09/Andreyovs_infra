@@ -9,9 +9,8 @@ variable zone {
 
 variable app_disk_image {
   description = "Disk image for reddit app"
-  default     = "reddit-app"
+  default     = "reddit-app-base-20181031-191304"
 }
-
 variable "private_key_path" {
   description = "Path to the private key used for ssh access"
 }
