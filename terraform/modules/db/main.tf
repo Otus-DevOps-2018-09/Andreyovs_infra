@@ -33,7 +33,7 @@ resource "null_resource" "db_provisioner" {
   }
 
   provisioner "file" {
-    source      = "/files/startdb.sh"
+    source      = "./files/startdb.sh"
     destination = "/tmp/startdb.sh"
   }
 

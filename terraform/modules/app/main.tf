@@ -10,6 +10,30 @@ resource "google_compute_instance" "app" {
     }
   }
 
+  connection {
+    type        = "ssh"
+    user        = "appuser"
+    agent       = false
+    private_key = "${file(var.private_key_path)}"
+  }
+
+  provisioner "file" {
+    source      = "./../files/puma.service"
+    destination = "/tmp/puma.service"
+  }
+
+  provisioner "file" {
+    source      = "./../files/deploy.sh"
+    destination = "/tmp/deploy.sh"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /tmp/deploy.sh",
+      "/tmp/deploy.sh ${var.db_internal_ip}"
+    ]
+  }
+
   network_interface {
     network = "default"
 
@@ -20,27 +44,6 @@ resource "google_compute_instance" "app" {
 
   metadata {
     ssh-keys = "appuser:${file(var.public_key_path)}"
-  }
-}
-
-resource "null_resource" "app_provisioner" {
-  count = "${var.provision_var}"
-
-  provisioner "file" {
-    source      = "${var.files_puma_service}"
-    destination = "/tmp/puma.service"
-  }
-
-  provisioner "remote-exec" {
-    script = "${var.files_deploy_sh}"
-  }
-
-  connection {
-    type        = "ssh"
-    user        = "appuser"
-    agent       = false
-    private_key = "${file(var.private_key_path)}"
-    host        = "${google_compute_instance.app.network_interface.0.access_config.0.assigned_nat_ip}"
   }
 }
 

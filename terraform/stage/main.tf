@@ -15,6 +15,7 @@ module "app" {
   provision_var      = "${var.provision_var}"
   files_deploy_sh    = "${var.files_deploy_sh}"
   files_puma_service = "${var.files_puma_service}"
+  db_internal_ip     = "${module.db.db_internal_ip}"
 }
 
 module "db" {
@@ -24,7 +25,6 @@ module "db" {
   db_disk_image    = "${var.db_disk_image}"
   private_key_path = "${var.private_key_path}"
   provision_var    = "${var.provision_var}"
-  db_internal_ip   = "${module.db.db_internal_ip}"
 }
 
 module "vpc" {
