@@ -15,7 +15,7 @@ resource "google_storage_bucket" "state_bucket" {
   force_destroy = true
 
   lifecycle {
-    prevent_destroy = false
+    prevent_destroy = true
   }
 }
 

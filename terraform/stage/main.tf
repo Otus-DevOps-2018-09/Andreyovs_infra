@@ -24,6 +24,7 @@ module "db" {
   db_disk_image    = "${var.db_disk_image}"
   private_key_path = "${var.private_key_path}"
   provision_var    = "${var.provision_var}"
+  db_internal_ip   = "${module.db.db_internal_ip}"
 }
 
 module "vpc" {
