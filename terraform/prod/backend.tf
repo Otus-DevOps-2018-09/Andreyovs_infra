@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "storage-bucket-db"
+    bucket = "bucket-andreyo"
     prefix = "terraform/state"
   }
 }

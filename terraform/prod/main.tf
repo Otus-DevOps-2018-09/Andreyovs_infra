@@ -15,6 +15,7 @@ module "app" {
   provision_var      = "${var.provision_var}"
   files_deploy_sh    = "${var.files_deploy_sh}"
   files_puma_service = "${var.files_puma_service}"
+  db_internal_ip     = "${module.db.db_internal_ip}"
 }
 
 module "db" {
@@ -28,5 +29,5 @@ module "db" {
 
 module "vpc" {
   source        = "../modules/vpc"
-  source_ranges = ["91.77.55.2/32"]
+  source_ranges = ["0.0.0.0/0"]
 }

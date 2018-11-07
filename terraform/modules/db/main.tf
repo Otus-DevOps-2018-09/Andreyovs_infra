@@ -32,6 +32,18 @@ resource "null_resource" "db_provisioner" {
     host        = "${google_compute_instance.db.network_interface.0.access_config.0.nat_ip}"
   }
 
+  provisioner "file" {
+    source      = "./../files/startdb.sh"
+    destination = "/tmp/startdb.sh"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /tmp/startdb.sh",
+      "/tmp/startdb.sh",
+    ]
+  }
+
   provisioner "remote-exec" {
     #    script = "files/mongodb.sh"
     inline = [

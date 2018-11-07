@@ -9,7 +9,7 @@ variable zone {
 
 variable app_disk_image {
   description = "Disk image for reddit app"
-  default     = "reddit-app"
+  default     = "reddit-app-base-20181031-191304"
 }
 
 variable "private_key_path" {
@@ -26,4 +26,7 @@ variable files_puma_service {
 
 variable files_deploy_sh {
   description = "Var for puma start"
+}
+variable "db_internal_ip" {
+  description = "mongo database internal ip from module db"
 }
