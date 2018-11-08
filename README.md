@@ -14,3 +14,21 @@ created reddit config file
 created modules 
 Created enviroments
 Created stage-prod configuration
+
+ДЗ8
+Installed Ansible control machine to execute Ansible tasks from
+Created inventory files in various formats:  `yml`, `json`
+Created `ansible.cfg` config file with default values for the project
+Created ansible playbook to test ansible behaviour for repeating tasks
+Created ansible playbook, described in `clone.yml`, to test ansible behaviour for repeating tasks. 
+*
+devops@edg-devops:~/otus/ansible$ ansible all -m ping
+appserver | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+dbserver | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+
