@@ -10,4 +10,7 @@ gcloud computape instances create reddit-app --boot-disk-size=10GB --image-proje
 ДЗ 6 terraform-1
 created loadbalancer rule
 created reddit config file
-
+ДЗ 7
+created modules 
+Created enviroments
+Created stage-prod configuration

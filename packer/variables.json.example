@@ -1,6 +1,4 @@
 {
-    "project_id": "infra-000000",
-    "source_image_family": "ubuntu-1604-lts",
-    "zone": "europe-west1-b",
-    "machine_type": "f1-micro"
+    "project_id": "project-xxxxx",
+    "source_image_family": "xxxxx-lts"
 }
