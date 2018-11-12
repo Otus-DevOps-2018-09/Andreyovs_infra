@@ -5,7 +5,7 @@
           "ansible_host": "35.195.213.54"
         },
         "dbserver": {
-          "ansible_host": "130.211.48.3"
+          "ansible_host": "35.233.66.221"
         }
       }
     },
