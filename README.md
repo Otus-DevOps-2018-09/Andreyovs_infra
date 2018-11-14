@@ -32,3 +32,12 @@ dbserver | SUCCESS => {
     "ping": "pong"
 }
 
+ДЗ 9
+
+- Created ansible playbooks
+  - `reddit_app_one_play` 
+  - `reddit_app_multiple_plays`
+  - `app.yml`, `db.yml`, and `deploy.yml`  The playbooks imported in `site.yml` in predefined order to deploy Reddit application.
+  - `packer_db.yml` and `packer_app.yml` are the playbooks for packer images provisioning using ansible
+- Changed provisioning config in `packer/app.json` and `packer/db.json` to replace bash scripts with ansible playbooks
+- Created configuration for dynamic inventory using `gce.py`
