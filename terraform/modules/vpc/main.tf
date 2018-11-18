@@ -38,3 +38,16 @@ resource "google_compute_firewall" "firewall_ssh" {
 
   source_ranges = "${var.source_ranges}"
 }
+
+resource "google_compute_firewall" "firewall_nginx" {
+  name    = "allow-nginx-default"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["80"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+  target_tags   = ["reddit-app"]
+}
