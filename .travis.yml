@@ -14,9 +14,9 @@ before_install:
   - wget https://releases.hashicorp.com/packer/1.2.2/packer_1.2.2_linux_amd64.zip -P /tmp/
   - unzip /tmp/packer_1.2.2_linux_amd64.zip -d /tmp
   - sudo  mv /tmp/packer /usr/bin/packer
-  - packer validate -var-file=variables.json.example packer/app.json
-  - packer validate -var-file=variables.json.example packer/db.json
   - cd packer
+  - packer validate -var-file=variables.json.example app.json
+  - packer validate -var-file=variables.json.example db.json
   - packer validate -var-file=variables.json.example immutable.json
   - packer validate -var-file=variables.json.example ubuntu16.json
   - cd -
