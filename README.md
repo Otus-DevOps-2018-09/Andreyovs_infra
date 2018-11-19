@@ -47,4 +47,4 @@ dbserver | SUCCESS => {
 -Created environments for stage and production with variables defined using Ansible `group_vars`. Added tasks for the `app` and `db` roles to display the environments they belong to
 -Installed `jdauphant.nginx` community role with `ansible-galaxy` and configured Ansible to allow Reddit application to be reachable on port `80`. The appropriate firewall rule has been added to Terraform configuration
 - Organised playbooks according to Ansible 
-- :large_blue_diamond: Created `credentials.yml` for each environment and encrypted its content using `ansible-vault`
+- Created `credentials.yml` for each environment and encrypted its content using `ansible-vault`
