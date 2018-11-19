@@ -2,7 +2,6 @@ dist: trusty
 sudo: required
 language: bash
 before_install:
-before_install:
   - curl https://raw.githubusercontent.com/express42/otus-homeworks/2018-02/run.sh | bash
   - touch ~/.ssh/appuser.pub && touch ~/.ssh/appuser
   - sudo -H pip install ansible
