@@ -48,3 +48,4 @@ dbserver | SUCCESS => {
 -Installed `jdauphant.nginx` community role with `ansible-galaxy` and configured Ansible to allow Reddit application to be reachable on port `80`. The appropriate firewall rule has been added to Terraform configuration
 - Organised playbooks according to Ansible 
 - Created `credentials.yml` for each environment and encrypted its content using `ansible-vault`
+deleted file .traviceci.yml
