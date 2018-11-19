@@ -1,5 +1,7 @@
 dist: trusty
-sudo: required
+become : yes
+become_method : sudo
+become_user : appuser
 language: bash
 before_install:
   - curl https://raw.githubusercontent.com/express42/otus-homeworks/2018-02/run.sh | bash
