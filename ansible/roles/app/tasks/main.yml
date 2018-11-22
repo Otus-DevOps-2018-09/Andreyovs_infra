@@ -1,14 +1,9 @@
 ---
-# defaults file for app
-db_host: 127.0.0.1
-env: local
-deploy_user: appuser
-
-# tasks file for app
+  # tasks file for app
 
 - name: Show info about the env this host belongs to
   debug:
-    msg: "This host is in {{ env }} environment!!!"
+    msg: "This host is in {{ env }} environment!"
 
 - include: ruby.yml
 - include: puma.yml
