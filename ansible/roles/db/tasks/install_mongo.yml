@@ -1,6 +1,7 @@
+---
 - name: Add APT key
   apt_key:
-    id: "EA312927"
+    id: EA312927
     keyserver: keyserver.ubuntu.com
   tags: install
 
