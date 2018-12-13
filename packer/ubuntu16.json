@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "variables": {
         "project_id": null,
         "source_image_family": null,
@@ -34,30 +33,4 @@
             "execute_command": "sudo {{.Path}}"
         }
     ]
-=======
-	"builders": [
-		{
-			"type": "googlecompute",
-			"project_id": "infra-219714",
-			"image_name": "reddit-base-{{timestamp}}",
-			"image_family": "reddit-base",
-			"source_image_family": "ubuntu-1604-lts",
-			"zone": "europe-west1-b",
-			"ssh_username": "appuser",
-			"machine_type": "f1-micro"
-																            }
-		     ],
-          "provisioners": [
-	          {
-			"type": "shell",
-			"script": "config-scripts/install_ruby.sh",
-			"execute_command": "sudo {{.Path}}"
-		  },
-		  {
-			  "type": "shell",
-			  "script": "config-scripts/install_mongodb.sh",
-			  "execute_command": "sudo {{.Path}}"
-		  } 
-	  		   ]
->>>>>>> 47572de... base homework compleeted
 }
