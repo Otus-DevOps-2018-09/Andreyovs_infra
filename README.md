@@ -32,3 +32,20 @@ dbserver | SUCCESS => {
     "ping": "pong"
 }
 
+ДЗ 9
+
+- Created ansible playbooks
+  - `reddit_app_one_play` 
+  - `reddit_app_multiple_plays`
+  - `app.yml`, `db.yml`, and `deploy.yml`  The playbooks imported in `site.yml` in predefined order to deploy Reddit application.
+  - `packer_db.yml` and `packer_app.yml` are the playbooks for packer images provisioning using ansible
+- Changed provisioning config in `packer/app.json` and `packer/db.json` to replace bash scripts with ansible playbooks
+- Created configuration for dynamic inventory using `gce.py`
+
+ДЗ 10
+-Created Ansible `app` and `db` roles with `ansible-galaxy init` command and assigned default variables for roles
+-Created environments for stage and production with variables defined using Ansible `group_vars`. Added tasks for the `app` and `db` roles to display the environments they belong to
+-Installed `jdauphant.nginx` community role with `ansible-galaxy` and configured Ansible to allow Reddit application to be reachable on port `80`. The appropriate firewall rule has been added to Terraform configuration
+- Organised playbooks according to Ansible 
+- Created `credentials.yml` for each environment and encrypted its content using `ansible-vault`
+deleted file .traviceci.yml
